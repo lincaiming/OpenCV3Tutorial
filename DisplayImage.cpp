@@ -23,9 +23,10 @@ int main(int argc, char** argv )
     // boxFilter(image, out, -1, Size(5, 5));
     // blur(image, out, Size(7, 7));
     // GaussianBlur(image, out, Size(3, 3), 0, 0);
-    medianBlur(image, out, 7);
+    // medianBlur(image, out, 7);
+    bilateralFilter(image, out, 25, 25*2, 25/2);
 
-    imshow("medianBlur image result", out);
+    imshow("bilateralFilter image result", out);
 
     waitKey(0);
 

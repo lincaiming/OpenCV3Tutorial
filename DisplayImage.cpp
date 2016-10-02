@@ -22,9 +22,10 @@ int main(int argc, char** argv )
     //方框滤波
     // boxFilter(image, out, -1, Size(5, 5));
     // blur(image, out, Size(7, 7));
-    GaussianBlur(image, out, Size(3, 3), 0, 0);
+    // GaussianBlur(image, out, Size(3, 3), 0, 0);
+    medianBlur(image, out, 7);
 
-    imshow("GaussianBlur image result", out);
+    imshow("medianBlur image result", out);
 
     waitKey(0);
 

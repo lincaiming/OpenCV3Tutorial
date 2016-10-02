@@ -20,9 +20,10 @@ int main(int argc, char** argv )
     Mat out;
 
     //方框滤波
-    boxFilter(image, out, -1, Size(5, 5));
+    // boxFilter(image, out, -1, Size(5, 5));
+    blur(image, out, Size(7, 7));
 
-    imshow("boxFilter image result", out);
+    imshow("blur image result", out);
 
     waitKey(0);
 

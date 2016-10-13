@@ -1,1 +1,0 @@
-/home/smdt/work/example_opencv/CMakeFiles/DisplayImage.dir

@@ -1,34 +1,15 @@
-#include <stdio.h>
 #include <opencv2/opencv.hpp>
-
+#include <opencv2/imgproc/imgproc.hpp>
 using namespace cv;
 
-int main(int argc, char** argv )
+int main()
 {
-
-    Mat image;
-    image = imread( "1.jpg");
-
-    if ( !image.data )
-    {
-        printf("No image data \n");
-        return -1;
-    }
-    namedWindow("Display Image", WINDOW_AUTOSIZE );
-    imshow("Display Image", image);
-
+    Mat image = imread("1.jpg");
     Mat out;
+    boxFilter(image, out, -1, Size(5, 5));
+    imshow("source image", image);
+    imshow("boxFilter image", out);
+    
+    waitKey();
 
-    //方框滤波
-    // boxFilter(image, out, -1, Size(5, 5));
-    // blur(image, out, Size(7, 7));
-    // GaussianBlur(image, out, Size(3, 3), 0, 0);
-    // medianBlur(image, out, 7);
-    bilateralFilter(image, out, 25, 25*2, 25/2);
-
-    imshow("bilateralFilter image result", out);
-
-    waitKey(0);
-
-    return 0;
 }
